@@ -37,6 +37,7 @@ module.exports.routes = {
   },
 
 'get /room': 'ChatController.room',
+'get /rvajs': 'ChatController.rvajs',
 
 'get /login': 'AuthController.login',
 'get /logout': 'AuthController.logout',

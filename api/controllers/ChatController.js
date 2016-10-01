@@ -36,6 +36,17 @@ room: function (req, res) {
 			});
 		});
   },
+
+rvajs: function (req, res) {
+
+    Chat.find().populate('senderUser').exec( function (err, chats) {
+			
+		return	res.send({
+				chats: chats,
+				errors: req.flash('error')
+			});
+		});
+  },
 	
 };
 
