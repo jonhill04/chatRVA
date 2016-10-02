@@ -35,12 +35,12 @@ module.exports.policies = {
   },
 
   UserController: {
-    '*': ['passport', 'sessionAuth']
+    '*': ['passport', 'sessionAuth','bearerAuth']
 
   },
 
   ChatController: {
-    '*': ['passport', 'sessionAuth']
+    '*': ['passport', 'sessionAuth','bearerAuth']
   }
 
   /***************************************************************************
