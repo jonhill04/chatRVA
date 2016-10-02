@@ -26,6 +26,19 @@ create: function (req, res) {
 // 		});
   },	
 
+ rvajscreate: function (req, res) {
+
+	Chat.create(req.params.all(), function (err, chat) {
+
+	Chat.publishCreate(chat);	
+
+	res.json(200, {
+            chat: chat,
+          });
+				
+		});	
+  },	
+
 room: function (req, res) {
 
     Chat.find().populate('senderUser').exec( function (err, chats) {
