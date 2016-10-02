@@ -45,7 +45,16 @@ module.exports.routes = {
  
 'post /auth/local': 'AuthController.callback',
 'post /auth/local/:action': 'AuthController.callback',
+
+//api routes
+'get /api/v1/rvajs': 'ChatController.rvajs',
+// 'get /api/v1/login': 'AuthController.callback',
+// 'get /api/v1/logout': 'AuthController.callback',
  
+'post /api/v1/auth/local': 'AuthController.callback',
+'post /api/v1/auth/local/:action': 'AuthController.callback',
+
+//not used for presentation 
 'get /auth/:provider': 'AuthController.provider',
 'get /auth/:provider/callback': 'AuthController.callback',
 'get /auth/:provider/:action': 'AuthController.callback',

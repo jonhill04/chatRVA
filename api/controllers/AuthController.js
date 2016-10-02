@@ -156,6 +156,8 @@ var AuthController = {
     }
 
     passport.callback(req, res, function (err, user, challenges, statuses) {
+          console.log(err);
+    // console.log(res);
       if (err || !user) {
         return tryAgain(challenges);
       }
@@ -168,9 +170,20 @@ var AuthController = {
         // Mark the session as authenticated to work with default Sails sessionAuth.js policy
         req.session.authenticated = true
         
+
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.redirect('/room');
+
+        if(req.url.split('/')[1]==="api"){
+          res.json(200, {
+            user: user,
+            //token: TokenService.issue(_.isObject(user.id) ? JSON.stringify(user.id) : user.id)
+          });
+        }
+        else{
+          res.redirect('/room');  
+        }
+        
       });
     });
   },
