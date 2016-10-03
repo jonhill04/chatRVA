@@ -169,6 +169,8 @@ exports.login = function (req, identifier, password, next) {
             return next(err);
           }
 
+          user.accessToken = passport.accessToken;
+
           if (!res) {
             req.flash('error', 'Error.Passport.Password.Wrong');
             return next(null, false);

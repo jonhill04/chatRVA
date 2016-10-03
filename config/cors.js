@@ -55,24 +55,22 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // credentials: true,
+   credentials: true,
 
   /***************************************************************************
-  *                                                                          *
-  * Which methods should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests (see article linked above for more info)  *
-  *                                                                          *
-  ***************************************************************************/
-
-  // methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+   *                                                                          *
+   * Which methods should be allowed for CORS requests? This is only used in  *
+   * response to preflight requests (see article linked above for more info)  *
+   *                                                                          *
+   ***************************************************************************/
+  methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
 
   /***************************************************************************
-  *                                                                          *
-  * Which headers should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests.                                          *
-  *                                                                          *
-  ***************************************************************************/
-
-  // headers: 'content-type'
+   *                                                                          *
+   * Which headers should be allowed for CORS requests? This is only used in  *
+   * response to preflight requests.                                          *
+   *                                                                          *
+   ***************************************************************************/
+  headers: 'content-type, access-control-allow-origin, authorization'
 
 };
