@@ -124,6 +124,7 @@ var AuthController = {
    * @param {Object} res
    */
   callback: function (req, res) {
+    
     function tryAgain (err) {
 
       // Only certain error messages are returned via req.flash('error', someError)
@@ -156,12 +157,10 @@ var AuthController = {
     }
 
     passport.callback(req, res, function (err, user, challenges, statuses) {
-          console.log(err);
-    // console.log(res);
+
       if (err || !user) {
         return tryAgain(challenges);
       }
-
       req.login(user, function (err) {
         if (err) {
           return tryAgain(err);
@@ -177,8 +176,8 @@ var AuthController = {
         if(req.url.split('/')[1]==="api"){
           res.json(200, {
             user: user,
-            //token: TokenService.issue(_.isObject(user.id) ? JSON.stringify(user.id) : user.id)
           });
+
         }
         else{
           res.redirect('/room');  

@@ -51,7 +51,9 @@ module.exports.routes = {
 'post /api/v1/chat': 'ChatController.rvajscreate',
 // 'get /api/v1/login': 'AuthController.callback',
 // 'get /api/v1/logout': 'AuthController.callback',
- 
+'POST /api/v1/logout': 'AuthController.logout',
+'POST /api/v1/login': 'AuthController.callback',
+'POST /api/v1/login/:action': 'AuthController.callback', 
 'post /api/v1/auth/local': 'AuthController.callback',
 'post /api/v1/auth/local/:action': 'AuthController.callback',
 
